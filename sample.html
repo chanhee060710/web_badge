@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 이벤트 예제</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button id="button1">버튼 1</button>
+    <button id="button2">버튼 2</button>
+    
+    <div id="element1" class="hidden">요소 1이 나타났습니다!</div>
+    <div id="element2" class="hidden">요소 2가 나타났습니다!</div>
+
+    <script>
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+        const element1 = document.getElementById('element1');
+        const element2 = document.getElementById('element2');
+
+        button1.addEventListener('click', () => {
+            element1.classList.toggle('visible');
+            element2.classList.remove('visible');
+        });
+
+        button2.addEventListener('click', () => {
+            element2.classList.toggle('visible');
+            element1.classList.remove('visible');
+        });
+    </script>
+</body>
+</html>
